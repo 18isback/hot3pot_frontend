@@ -14,7 +14,6 @@ const CalendarPage = () => {
   const [date, onChangeDate] = useState(new Date());
 
   const [DataList, setDataList] = useState([]);
-  // api not working yet (CORS issue)
   useEffect(() => {
     axios
       .get("https://hot3pot-server-production.up.railway.app/places")

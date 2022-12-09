@@ -7,7 +7,7 @@ import { MapContainer, MapPageContainer } from "./Map.element";
 import "./Map.custom.css";
 import Card from "../../component/Card/Card";
 
-import { DummyList } from "../../dummy/dummy";
+// import { DummyList } from "../../dummy/dummy";
 
 const MapPage = () => {
   const [mapPin, setMapPin] = useState([]);
@@ -46,21 +46,6 @@ const MapPage = () => {
         console.log(status, result);
       }
     });
-  };
-
-  const PlacePicker = () => {
-    if (FilterList.length === 0) {
-      return <></>;
-    } else {
-      FilterList.map((data, index) => {
-        console.log(data);
-        return Card(data);
-      });
-    }
-    // var found = DummyList.find((e) => e.id === 1);
-    // console.log("found");
-    // console.log(found);
-    // return <>{Card(found)}</>;
   };
 
   const onMarkerPress = (data) => {

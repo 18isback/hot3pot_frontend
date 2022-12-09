@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { DashboardContainer, SearchArea, SearchBar } from "./Dashboard.element";
 import "./Dashboard.custom.css";
-import { DummyList } from "../../dummy/dummy";
+// import { DummyList } from "../../dummy/dummy";
 
 import { FaSearch } from "react-icons/fa";
 

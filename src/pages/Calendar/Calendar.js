@@ -7,7 +7,7 @@ import { CalendarContainer } from "./Calendar.element";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.custom.css";
 
-import { DummyList } from "../../dummy/dummy";
+// import { DummyList } from "../../dummy/dummy";
 import Card from "../../component/Card/Card";
 
 const CalendarPage = () => {

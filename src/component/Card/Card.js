@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   CardIndiv,
   CardVidContainer,
@@ -13,7 +13,9 @@ import {
 import "./Card.custom.css";
 
 const Card = (data) => {
-  var vid_width = 0.99 * window.innerWidth;
+  var vidWidth = 0.99 * window.innerWidth;
+  // const [vidWidth, setVidWidth] = useState();
+
   return (
     <CardIndiv className="Card" key={data.id}>
       <CardTopDiv>
@@ -31,12 +33,12 @@ const Card = (data) => {
       <CardVidContainer>
         {
           // data.vid_src.split(".")[1] === "gif"
-          data.id === 3 ? (
-            <img src={data.vid_src} alt="test" width={vid_width} />
+          data.type === "gif" ? (
+            <img src={data.vid_src} alt="test" width={vidWidth} />
           ) : (
             <video
               src={data.vid_src}
-              width={vid_width}
+              width={vidWidth}
               loop
               controls
               autoPlay={false}

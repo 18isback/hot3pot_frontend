@@ -40,7 +40,7 @@ const MapPage = () => {
         // console.log(new kakao.maps.LatLng(result[0].x, result[0].y));
         setMapPin((mapPin) => [
           ...mapPin,
-          [new kakao.maps.LatLng(result[0].x, result[0].y), data.place],
+          [new kakao.maps.LatLng(result[0].x, result[0].y), data.address],
         ]);
       } else {
         console.log(status, result);
@@ -49,8 +49,8 @@ const MapPage = () => {
   };
 
   const onMarkerPress = (data) => {
-    console.log(data[1]);
-    setFilterList(DataList.filter((item) => item.place === data[1]));
+    console.log(data);
+    setFilterList(DataList.filter((item) => item.address === data[1]));
   };
 
   const MarkonMap = (data) => {

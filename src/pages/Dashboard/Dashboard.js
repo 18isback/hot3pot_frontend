@@ -18,8 +18,9 @@ const Dashboard = () => {
     axios
       .get("https://hot3pot-server-production.up.railway.app/places")
       .then((res) => {
-        console.log(res.data);
-        setDataList(res.data);
+        // console.log(res.data.reverse());
+        // console.log(res.data);
+        setDataList(res.data.reverse());
       })
       .catch((err) => {
         console.log(err);

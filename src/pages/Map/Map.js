@@ -50,7 +50,9 @@ const MapPage = () => {
 
   const onMarkerPress = (data) => {
     console.log(data);
-    setFilterList(DataList.filter((item) => item.address === data[1]));
+    setFilterList(
+      DataList.filter((item) => item.address === data[1]).reverse()
+    );
   };
 
   const MarkonMap = (data) => {
@@ -75,6 +77,7 @@ const MapPage = () => {
           center={{ lat: 36.2683, lng: 127.6358 }}
           style={{ width: "100%", height: "100%" }}
           level={14}
+          scrollwheel={false}
         >
           {mapPin.map((data, index) => {
             return MarkonMap(data);

@@ -39,7 +39,8 @@ abbr[title] {
   border-radius: 6px;
 } */
 .react-calendar__tile--now {
-  background: #ffffff;
+  background-color: white;
+
   font-weight: bold;
   color: #6f48eb;
 }
@@ -102,3 +103,12 @@ abbr[title] {
   background: #6f48eb;
   color: white;
 } */
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #f87171;
+  border-radius: 50%;
+  display: flex;
+  margin-left: 1px;
+}

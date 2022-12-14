@@ -7,3 +7,10 @@ export const CalendarContainer = styled.div`
   /* align-items: center; */
   padding: 1vh 0;
 `;
+
+export const CalendarDot = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+`;

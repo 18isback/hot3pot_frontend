@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import moment from "moment";
 import axios from "axios";
 
-import { CalendarContainer } from "./Calendar.element";
+import { CalendarContainer, CalendarDot } from "./Calendar.element";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.custom.css";
 
@@ -12,6 +12,7 @@ import Card from "../../component/Card/Card";
 
 const CalendarPage = () => {
   const [date, onChangeDate] = useState(new Date());
+  const [mark, setMark] = useState([]);
 
   const [DataList, setDataList] = useState([]);
   useEffect(() => {
@@ -25,6 +26,11 @@ const CalendarPage = () => {
         console.log(err);
       });
   }, []);
+  useEffect(() => {
+    DataList.map((data) => {
+      setMark((mark) => [...mark, data.day]);
+    });
+  }, [DataList]);
 
   const onClickDay = (e) => {
     // console.log(e);
@@ -63,6 +69,18 @@ const CalendarPage = () => {
           formatDay={(locale, date) => moment(date).format("DD")}
           minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
           maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
+          tileContent={({ date, view }) => {
+            let html = [];
+            if (mark.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
+              html.push(<div className="dot"></div>);
+            }
+            return (
+              <>
+                <CalendarDot>{html}</CalendarDot>
+              </>
+            );
+          }}
+
           // maxDate={new Date()}
         />
         {/* <div>{moment(date).format("YYYY년 MM월 DD일")}</div> */}

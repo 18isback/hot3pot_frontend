@@ -77,7 +77,7 @@ const MapPage = () => {
           center={{ lat: 36.2683, lng: 127.6358 }}
           style={{ width: "100%", height: "100%" }}
           level={14}
-          scrollwheel={false}
+          scrollwheel={true}
         >
           {mapPin.map((data, index) => {
             return MarkonMap(data);
